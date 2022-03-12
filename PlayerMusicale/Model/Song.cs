@@ -26,6 +26,7 @@ namespace PlayerMusicale.Model
             this.Path = path;
             this.ID = NextID++;
             AllSongs.Add(this);
+            
             //sbrobobbo
         }
     }

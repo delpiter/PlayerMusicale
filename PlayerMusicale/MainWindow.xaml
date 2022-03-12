@@ -24,11 +24,17 @@
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid Background="{DynamicResource BgColor1}">
+            <Grid Name="LeftColumn"
+                Background="{DynamicResource BgColor1}">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="{Binding ElementName=TitleBar, Path=ActualHeight}"/>
+                    <RowDefinition Height="{Binding 
+                        ElementName=TitleBar, 
+                        Path=ActualHeight}"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
+                    <RowDefinition Height="{Binding 
+                        ElementName=LeftColumn,
+                        Path=ActualWidth}"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="1">
                     amogus
@@ -40,11 +46,23 @@
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
+            <Frame Grid.Column="1" Source="../View/HomePage.xaml">
+                
+            </Frame>
         </Grid>
         <Rectangle Height="{Binding ElementName=TitleBar, Path=ActualHeight}"
                    Fill="Transparent" MouseLeftButtonDown="Rectangle_MouseLeftButtonDown"/>
-        <StackPanel Name="TitleBar" Orientation="Horizontal">
-        </StackPanel>
+        <Grid Name="TitleBar">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1"
+                   FontSize="10"
+                   Content="{Binding ElementName=mainW, Path=Title}"/>
+
+        </Grid>
         <Grid Grid.Row="2"
               Background="{DynamicResource BgColor2}">
 
