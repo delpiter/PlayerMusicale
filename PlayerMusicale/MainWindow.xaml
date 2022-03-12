@@ -52,8 +52,7 @@
                 </ScrollViewer>
             </Grid>
         </Grid>
-        <StackPanel Name="TitleBar" Orientation="Horizontal"
-                    Background="Blue">
+        <StackPanel Name="TitleBar" Orientation="Horizontal">
 
         </StackPanel>
         <Grid Grid.Row="2"
