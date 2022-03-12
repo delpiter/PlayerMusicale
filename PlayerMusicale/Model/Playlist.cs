@@ -13,11 +13,14 @@ namespace PlayerMusicale.Model
     {
         public string Name { get; set; }
         public ObservableCollection<Song> Songs { get; set; }
+        public string ImagePath { get; set; }
+
         public Playlist() { }
         public Playlist(string name)
         {
             this.Name = name;
             this.Songs = new ObservableCollection<Song>();
+            this.ImagePath = "../Assets/Images/DefaultPlaylist.svg";
         }
     }
 }
