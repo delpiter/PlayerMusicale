@@ -4,6 +4,16 @@
              xmlns:local="clr-namespace:PlayerMusicale"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        
+        <SolidColorBrush x:Key="BgColor0" Color="#000"/>
+        <SolidColorBrush x:Key="BgColor1" Color="#121212"/>
+        <SolidColorBrush x:Key="BgColor2" Color="#181818"/>
+        <SolidColorBrush x:Key="BgColor3" Color="#2b2c2c"/>
+
+        <SolidColorBrush x:Key="FgColor0" Color="White"/>
+
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="{DynamicResource FgColor0}"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
     </Application.Resources>
 </Application>
