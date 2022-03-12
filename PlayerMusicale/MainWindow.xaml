@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Background="{DynamicResource BaseBackground}"
-        Height="720" Width="1280">
+        Height="720" Width="1280" Name="mainW">
     <Window.Resources>
         <SolidColorBrush x:Key="BaseBackground" Color="Black"/>
         <SolidColorBrush x:Key="ItemBackground" Color="#171716"/>
