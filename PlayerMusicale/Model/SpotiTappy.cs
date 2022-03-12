@@ -5,53 +5,48 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.IO;
+using System.Collections.ObjectModel;
 
 namespace PlayerMusicale.Model
 {
-    [Serializable]
-    internal class SpotiTappy
+    public static class SpotiTappy
     {
-        public static List<Song> AllSongs { get; set; }
-        public List<Playlist> Playlists { get; set; }
+        public static ObservableCollection<Playlist> Playlists = new ObservableCollection<Playlist>();
 
-        public SpotiTappy() { }
-
-
-
-        public void SaveXML()
+        public static void SaveXML()
         {
             StreamWriter sw;
             using (sw = new StreamWriter("../Serialization/AllSongs.xml")) 
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
-                serializer.Serialize(sw, AllSongs);
+                XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
+                serializer.Serialize(sw, Song.AllSongs);
             }
-            using (sw = new StreamWriter("../Serialization/PlayLists.xml"))
+            using (sw = new StreamWriter("../Serialization/PlayObservableCollections.xml"))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
+                XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
                 serializer.Serialize(sw, Playlists);
             }
 
         }
 
-        public void LoadXML()
+        public static void LoadXML()
         {
             StreamReader sr;
             if(File.Exists("../Serialization/AllSongs.xml"))
             {
                 using (sr = new StreamReader("../Serialization/AllSongs.xml"))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
-                    AllSongs = (List<Song>)serializer.Deserialize(sr);
+                    XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
+                    Song.AllSongs = (ObservableCollection<Song>)serializer.Deserialize(sr);
                 }
             }
             
             if (File.Exists("../Serialization/Play.xml"))
             {
-                using (sr = new StreamReader("../Serialization/PlayLists.xml"))
+                using (sr = new StreamReader("../Serialization/PlayObservableCollections.xml"))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<Playlist>));
-                    Playlists = (List<Playlist>)serializer.Deserialize(sr);
+                    XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Playlist>));
+                    Playlists = (ObservableCollection<Playlist>)serializer.Deserialize(sr);
                 }
             }
         }
