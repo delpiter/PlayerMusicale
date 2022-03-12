@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:PlayerMusicale"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="BaseBackground" Color="Black"/>
+        <SolidColorBrush x:Key="ItemBackground" Color="#171716"/>
+        <SolidColorBrush x:Key="BaseForeground" Color="White"/>
+
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
     </Application.Resources>
 </Application>
