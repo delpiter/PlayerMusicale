@@ -16,6 +16,7 @@ namespace PlayerMusicale.Model
         public string Name { get; set; }
         public string Author { get; set; }
         public string Path { get; set; }
+        public string ImagePath { get; set; }
 
         public Song() { }
 
@@ -24,6 +25,7 @@ namespace PlayerMusicale.Model
             this.Name = name;
             this.Author = author;
             this.Path = path;
+            this.ImagePath = "../Assets/Images/DefaultSong.svg";
             this.ID = NextID++;
             AllSongs.Add(this);
             //sbrobobbo
