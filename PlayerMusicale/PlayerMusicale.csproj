@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Folder Include="Assets\Images\" />
+    <Folder Include="Assets\Audio\" />
+    <Folder Include="Serialization\" />
   </ItemGroup>
 
 </Project>
