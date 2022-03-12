@@ -9,6 +9,21 @@
       Title="HomePage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
+                <GradientStop Color="#FF353434" Offset="0"/>
+                <GradientStop Color="Black" Offset="0.842"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <ScrollViewer>
+            <StackPanel>
+                
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
