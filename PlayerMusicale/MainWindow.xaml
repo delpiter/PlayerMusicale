@@ -1,0 +1,80 @@
+﻿<Window x:Class="PlayerMusicale.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlayerMusicale"
+        mc:Ignorable="d"
+        Title="Spotitappy" WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BaseBackground}"
+        Height="720" Width="1280">
+    <Window.Resources>
+        <SolidColorBrush x:Key="BaseBackground" Color="Black"/>
+        <SolidColorBrush x:Key="ItemBackground" Color="#171716"/>
+        <SolidColorBrush x:Key="BaseForeground" Color="White"/>
+
+        <Style TargetType="Label" x:Key="BaseLabel">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="Label" BasedOn="{StaticResource BaseLabel}"></Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"></Rectangle>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <Label>
+                    amogus
+                </Label>
+                <ListBox>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>ses</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>ses</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>sas</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                    <ListBoxItem>ses</ListBoxItem>
+                    <ListBoxItem>sus</ListBoxItem>
+                </ListBox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
