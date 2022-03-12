@@ -8,63 +8,56 @@
         Title="Spotitappy" WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Background="{DynamicResource BaseBackground}"
+        Background="{DynamicResource BgColor0}"
         Height="720" Width="1280" Name="mainW">
+    <Window.Resources>
+        <SolidColorBrush x:Key="BgColor0" Color="#000"/>
+        <SolidColorBrush x:Key="BgColor1" Color="#121212"/>
+        <SolidColorBrush x:Key="BgColor2" Color="#181818"/>
+        <SolidColorBrush x:Key="BgColor3" Color="#2b2c2c"/>
+
+        <SolidColorBrush x:Key="FgColor0" Color="White"/>
+
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="{DynamicResource FgColor0}"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
-        <Rectangle Grid.Row="0" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"/>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Orientation="Vertical" Grid.Column="0">
-                <Label>
+            <Grid Background="{DynamicResource BgColor1}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="{Binding ElementName=TitleBar, Path=ActualHeight}"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1">
                     amogus
                 </Label>
-                <ListBox>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>ses</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>ses</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>sas</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                    <ListBoxItem>ses</ListBoxItem>
-                    <ListBoxItem>sus</ListBoxItem>
-                </ListBox>
-            </StackPanel>
+                <ScrollViewer Grid.Row="2"
+                              HorizontalScrollBarVisibility="Hidden"
+                              VerticalScrollBarVisibility="Hidden">
+                    <StackPanel Orientation="Vertical">
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+        <StackPanel Name="TitleBar" Orientation="Horizontal">
+
+        </StackPanel>
+        <Grid Grid.Row="2"
+              Background="{DynamicResource BgColor2}">
+            
         </Grid>
     </Grid>
 </Window>
