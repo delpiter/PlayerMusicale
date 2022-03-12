@@ -10,23 +10,13 @@
         WindowStartupLocation="CenterScreen"
         Background="{DynamicResource BaseBackground}"
         Height="720" Width="1280" Name="mainW">
-    <Window.Resources>
-        <SolidColorBrush x:Key="BaseBackground" Color="Black"/>
-        <SolidColorBrush x:Key="ItemBackground" Color="#171716"/>
-        <SolidColorBrush x:Key="BaseForeground" Color="White"/>
-
-        <Style TargetType="Label" x:Key="BaseLabel">
-            <Setter Property="Foreground" Value="White"/>
-        </Style>
-        <Style TargetType="Label" BasedOn="{StaticResource BaseLabel}"></Style>
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        <Rectangle Grid.Row="0" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"></Rectangle>
+        <Rectangle Grid.Row="0" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
