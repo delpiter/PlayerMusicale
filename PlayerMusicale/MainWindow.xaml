@@ -47,7 +47,6 @@
                               HorizontalScrollBarVisibility="Hidden"
                               VerticalScrollBarVisibility="Hidden">
                     <StackPanel Orientation="Vertical">
-                        <Button Content="sbrobobbo"></Button>
                     </StackPanel>
                 </ScrollViewer>
             </Grid>

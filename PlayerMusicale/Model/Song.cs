@@ -23,6 +23,7 @@ namespace PlayerMusicale.Model
             this.Author = author;
             this.Path = path;
             this.ID = NextID++;
+            //sbrobobbo
         }
     }
 }
