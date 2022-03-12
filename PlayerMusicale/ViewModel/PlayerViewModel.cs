@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MicroMvvm;
 
-namespace PlayerMusicale.PlayerViewModel
+namespace PlayerMusicale.ViewModel
 {
     public class PlayerViewModel : ObservableObject
     {
