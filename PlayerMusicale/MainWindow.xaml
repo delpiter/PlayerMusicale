@@ -47,13 +47,12 @@
                               HorizontalScrollBarVisibility="Hidden"
                               VerticalScrollBarVisibility="Hidden">
                     <StackPanel Orientation="Vertical">
-
+                        <Button Content="sbrobobbo"></Button>
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
         </Grid>
         <StackPanel Name="TitleBar" Orientation="Horizontal">
-            <Button Content="asdasdasdadasd"></Button>
         </StackPanel>
         <Grid Grid.Row="2"
               Background="{DynamicResource BgColor2}">
