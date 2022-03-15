@@ -25,7 +25,7 @@ namespace PlayerMusicale.Model
             this.Name = name;
             this.Author = author;
             this.Path = path;
-            this.ImagePath = "../Assets/Images/DefaultSong.svg";
+            this.ImagePath = "../../Assets/Images/DefaultSong.svg";
             this.ID = NextID++;
             AllSongs.Add(this);
             

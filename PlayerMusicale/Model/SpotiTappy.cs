@@ -16,12 +16,12 @@ namespace PlayerMusicale.Model
         public static void SaveXML()
         {
             StreamWriter sw;
-            using (sw = new StreamWriter("../Serialization/AllSongs.xml")) 
+            using (sw = new StreamWriter("../../Serialization/AllSongs.xml")) 
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
                 serializer.Serialize(sw, Song.AllSongs);
             }
-            using (sw = new StreamWriter("../Serialization/PlayObservableCollections.xml"))
+            using (sw = new StreamWriter("../../Serialization/PlayObservableCollections.xml"))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
                 serializer.Serialize(sw, Playlists);
@@ -32,18 +32,18 @@ namespace PlayerMusicale.Model
         public static void LoadXML()
         {
             StreamReader sr;
-            if(File.Exists("../Serialization/AllSongs.xml"))
+            if(File.Exists("../../Serialization/AllSongs.xml"))
             {
-                using (sr = new StreamReader("../Serialization/AllSongs.xml"))
+                using (sr = new StreamReader("../../Serialization/AllSongs.xml"))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
                     Song.AllSongs = (ObservableCollection<Song>)serializer.Deserialize(sr);
                 }
             }
             
-            if (File.Exists("../Serialization/Play.xml"))
+            if (File.Exists("../../Serialization/Play.xml"))
             {
-                using (sr = new StreamReader("../Serialization/PlayObservableCollections.xml"))
+                using (sr = new StreamReader("../../Serialization/PlayObservableCollections.xml"))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Playlist>));
                     Playlists = (ObservableCollection<Playlist>)serializer.Deserialize(sr);
