@@ -17,7 +17,7 @@
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
                 <GradientStop Color="#FF9A2626" Offset="0"/>
-                <GradientStop Color="Black" Offset="0.444"/>
+                <GradientStop Color="#BF181818" Offset="0.444"/>
             </LinearGradientBrush>
         </Grid.Background>
 
@@ -30,7 +30,6 @@
                     <Label Content="Home"
                            FontWeight="ExtraBlack"
                            FontSize="50"
-                           FontFamily="{StaticResource ProximaNova}"
                            VerticalAlignment="Bottom"></Label>
                 </StackPanel>
             </StackPanel>
