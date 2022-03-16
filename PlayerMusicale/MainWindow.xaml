@@ -32,9 +32,7 @@
                         Path=ActualHeight}"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition/>
-                    <RowDefinition Height="{Binding 
-                        ElementName=LeftColumn,
-                        Path=ActualWidth}"/>
+                    <RowDefinition Name="ImageRow" Height="auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="1">
                     amogus
@@ -59,9 +57,20 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="1"
-                   FontSize="10"
+                   FontWeight="Black"
+                   FontSize="11"
                    Content="{Binding ElementName=mainW, Path=Title}"/>
+            <DockPanel Grid.Column="2">
+                <Button>
+                    
+                </Button>
+                <Button>
+                    
+                </Button>
+                <Button>
 
+                </Button>
+            </DockPanel>
         </Grid>
         <Grid Grid.Row="2"
               Background="{DynamicResource BgColor2}">
