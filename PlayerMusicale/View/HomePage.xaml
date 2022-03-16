@@ -30,7 +30,7 @@
                     <Label Content="All Songs"
                            FontWeight="Black"
                            FontSize="30"
-                           
+                           FontFamily="{StaticResource ProximaNova}"
                            VerticalAlignment="Center"></Label>
                 </StackPanel>
             </StackPanel>

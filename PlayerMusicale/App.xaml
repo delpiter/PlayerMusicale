@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:PlayerMusicale"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+
+        <FontFamily x:Key="ProximaNova" >/Assets/Fonts/#Proxima Nova Font</FontFamily>
+        
         <SolidColorBrush x:Key="BgColor0" Color="#000"/>
         <SolidColorBrush x:Key="BgColor1" Color="#121212"/>
         <SolidColorBrush x:Key="BgColor2" Color="#181818"/>
@@ -22,7 +25,7 @@
             <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="Width" Value="40"/>
             <Setter Property="BorderThickness" Value="0"/>
-            
+
             <Setter Property="Background" Value="{DynamicResource TrnBgColor2}"/>
         </Style>
     </Application.Resources>

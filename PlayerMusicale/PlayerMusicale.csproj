@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Fonts\Proxima Nova Font.otf" />
     <None Remove="Assets\Images\DefaultPlaylist.png" />
     <None Remove="Assets\Images\DefaultSong.png" />
     <None Remove="Assets\Images\home.png" />
@@ -20,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Fonts\Proxima Nova Font.otf" />
     <Resource Include="Assets\Images\DefaultPlaylist.png" />
     <Resource Include="Assets\Images\DefaultSong.png" />
     <Resource Include="Assets\Images\home.png" />
