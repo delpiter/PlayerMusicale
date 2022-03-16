@@ -34,9 +34,9 @@
                     <RowDefinition/>
                     <RowDefinition Name="ImageRow" Height="auto"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="1">
-                    amogus
-                </Label>
+                
+                
+                
                 <ScrollViewer Grid.Row="2"
                               HorizontalScrollBarVisibility="Hidden"
                               VerticalScrollBarVisibility="Hidden">
@@ -57,20 +57,19 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="1"
-                   FontWeight="Black"
                    FontSize="11"
                    Content="{Binding ElementName=mainW, Path=Title}"/>
-            <DockPanel Grid.Column="2">
-                <Button>
-                    
-                </Button>
-                <Button>
-                    
-                </Button>
-                <Button>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
+                <Button Style="{StaticResource ControlButtons}">
 
                 </Button>
-            </DockPanel>
+                <Button Style="{StaticResource ControlButtons}">
+                    
+                </Button>
+                <Button Style="{StaticResource ControlButtons}">
+
+                </Button>
+            </StackPanel>
         </Grid>
         <Grid Grid.Row="2"
               Background="{DynamicResource BgColor2}">
