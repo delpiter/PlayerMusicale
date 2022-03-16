@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Images\DefaultPlaylist.png" />
+    <None Remove="Assets\Images\DefaultSong.png" />
+    <None Remove="Assets\Images\home.png" />
     <None Remove="Model\B" />
     <None Remove="Model\NewFile1.txt" />
   </ItemGroup>
@@ -14,6 +17,12 @@
   <ItemGroup>
     <Folder Include="Assets\Audio\" />
     <Folder Include="Serialization\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\DefaultPlaylist.png" />
+    <Resource Include="Assets\Images\DefaultSong.png" />
+    <Resource Include="Assets\Images\home.png" />
   </ItemGroup>
 
 </Project>

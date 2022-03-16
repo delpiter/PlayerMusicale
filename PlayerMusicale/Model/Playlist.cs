@@ -20,7 +20,7 @@ namespace PlayerMusicale.Model
         {
             this.Name = name;
             this.Songs = new ObservableCollection<Song>();
-            this.ImagePath = "../../Assets/Images/DefaultPlaylist.svg";
+            this.ImagePath = "../../Assets/Images/DefaultPlaylist.png";
         }
     }
 }
