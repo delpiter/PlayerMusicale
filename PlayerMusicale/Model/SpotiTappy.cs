@@ -21,7 +21,7 @@ namespace PlayerMusicale.Model
                 XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
                 serializer.Serialize(sw, Song.AllSongs);
             }
-            using (sw = new StreamWriter("../../Serialization/PlayObservableCollections.xml"))
+            using (sw = new StreamWriter("../../Serialization/PlayLists.xml"))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
                 serializer.Serialize(sw, Playlists);
@@ -41,9 +41,9 @@ namespace PlayerMusicale.Model
                 }
             }
             
-            if (File.Exists("../../Serialization/Play.xml"))
+            if (File.Exists("../../Serialization/PlayLists.xml"))
             {
-                using (sr = new StreamReader("../../Serialization/PlayObservableCollections.xml"))
+                using (sr = new StreamReader("../../Serialization/PlayLists.xml"))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Playlist>));
                     Playlists = (ObservableCollection<Playlist>)serializer.Deserialize(sr);

@@ -61,13 +61,13 @@
                    Content="{Binding ElementName=mainW, Path=Title}"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
                 <Button Style="{StaticResource ControlButtons}">
-
+                    <!--<TextBlock Text="-" />-->
                 </Button>
                 <Button Style="{StaticResource ControlButtons}">
                     
                 </Button>
                 <Button Style="{StaticResource ControlButtons}">
-
+                    
                 </Button>
             </StackPanel>
         </Grid>

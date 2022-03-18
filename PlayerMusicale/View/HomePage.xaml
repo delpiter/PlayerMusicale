@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="0,2">
-                <GradientStop Color="#FF9A2626" Offset="0"/>
+                <GradientStop Color="#FF9A6026" Offset="0"/>
                 <GradientStop Color="#BF181818" Offset="0.444"/>
             </LinearGradientBrush>
         </Grid.Background>
@@ -32,6 +32,9 @@
                            FontSize="50"
                            VerticalAlignment="Bottom"></Label>
                 </StackPanel>
+                <ListView ItemsSource="{Binding }">
+
+                </ListView>
             </StackPanel>
         </ScrollViewer>
     </Grid>

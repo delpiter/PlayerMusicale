@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="ListView" x:Key="Playlist">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <ContentPresenter/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="ItemTemplate"> <!--Playlist Item Template-->
+            <Setter.Value>
+                <DataTemplate>
+                    <DockPanel Margin="4">
+                        <DockPanel.Style>
+                            <Style TargetType="DockPanel"> <!--Change color on hover-->
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#303030"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                    </Trigger>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBoxItem}},Path=IsSelected}" Value="True">
+                                        <!--If selected keep the hover color-->
+                                        <Setter Property="Background" Value="#303030"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DockPanel.Style>
+                        <!-- * = To implement after the "add song feature is implemented-->
+                        <!-- * Source="{Binding }"-->
+                        <Image Width="50" Height="50" DockPanel.Dock="Left"/> <!--Here goes the image file from the mp3 -->
+
+                        <StackPanel Margin="4,0,0,0"> <!--Here goes the Name of the song and the artist name-->
+                            <!-- * Text="{Binding }"-->
+                            <TextBlock Foreground="White" FontSize="14" FontWeight="Medium"/>
+                            <!-- * Text="{Binding }"-->
+                            <TextBlock Foreground="Gray" FontSize="14"/>
+                        </StackPanel>
+
+                        <Grid HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,8,0">
+                            <!--Here goes the duration of the track (it will be displayed on the left)-->
+                            <!-- * Text="{Binding }"-->
+                            <TextBlock FontWeight="Medium" Foreground="Gray"/>
+                        </Grid>
+                        
+                    </DockPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        
+    </Style>
+</ResourceDictionary>
