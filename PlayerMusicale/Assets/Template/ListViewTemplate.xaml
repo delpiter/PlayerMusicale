@@ -18,12 +18,14 @@
             </Setter.Value>
         </Setter>
 
-        <Setter Property="ItemTemplate"> <!--Playlist Item Template-->
+        <Setter Property="ItemTemplate">
+            <!--Playlist Item Template-->
             <Setter.Value>
                 <DataTemplate>
                     <DockPanel Margin="4">
                         <DockPanel.Style>
-                            <Style TargetType="DockPanel"> <!--Change color on hover-->
+                            <Style TargetType="DockPanel">
+                                <!--Change color on hover-->
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter Property="Background" Value="#303030"/>
@@ -40,9 +42,11 @@
                         </DockPanel.Style>
                         <!-- * = To implement after the "add song feature is implemented-->
                         <!-- * Source="{Binding }"-->
-                        <Image Width="50" Height="50" DockPanel.Dock="Left"/> <!--Here goes the image file from the mp3 -->
+                        <Image Width="50" Height="50" DockPanel.Dock="Left"/>
+                        <!--Here goes the image file from the mp3 -->
 
-                        <StackPanel Margin="4,0,0,0"> <!--Here goes the Name of the song and the artist name-->
+                        <StackPanel Margin="4,0,0,0">
+                            <!--Here goes the Name of the song and the artist name-->
                             <!-- * Text="{Binding }"-->
                             <TextBlock Foreground="White" FontSize="14" FontWeight="Medium"/>
                             <!-- * Text="{Binding }"-->
@@ -54,11 +58,51 @@
                             <!-- * Text="{Binding }"-->
                             <TextBlock FontWeight="Medium" Foreground="Gray"/>
                         </Grid>
-                        
+
                     </DockPanel>
                 </DataTemplate>
             </Setter.Value>
         </Setter>
-        
     </Style>
+
+    <Style TargetType="Button" x:Key="ControlButtons">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="BorderThickness" Value="0"/>
+
+        <Setter Property="Background" Value="#BF181818"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF848282"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <FontFamily x:Key="ProximaNova" >/Assets/Fonts/#Proxima Nova Font</FontFamily>
+
+    <SolidColorBrush x:Key="BgColor0" Color="#000"/>
+    <SolidColorBrush x:Key="BgColor1" Color="#121212"/>
+    <SolidColorBrush x:Key="BgColor2" Color="#181818"/>
+    <SolidColorBrush x:Key="TrnBgColor2" Color="#BF181818"/>
+    <SolidColorBrush x:Key="BgColor3" Color="#2b2c2c"/>
+
+    <SolidColorBrush x:Key="FgColor0" Color="White"/>
+
+    <Style TargetType="Label">
+        <Setter Property="Foreground" Value="{DynamicResource FgColor0}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Black"/>
+    </Style>
+    
 </ResourceDictionary>

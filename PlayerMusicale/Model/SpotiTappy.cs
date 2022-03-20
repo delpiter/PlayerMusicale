@@ -9,9 +9,14 @@ using System.Collections.ObjectModel;
 
 namespace PlayerMusicale.Model
 {
-    public static class SpotiTappy
+    public partial class SpotiTappy
     {
         public static ObservableCollection<Playlist> Playlists = new ObservableCollection<Playlist>();
+
+        public SpotiTappy()
+        {
+
+        }
 
         public static void SaveXML()
         {

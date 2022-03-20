@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.Windows.Media.Imaging;
+
 namespace PlayerMusicale.Model
 {
     [Serializable]
@@ -16,16 +18,18 @@ namespace PlayerMusicale.Model
         public string Name { get; set; }
         public string Author { get; set; }
         public string Path { get; set; }
-        public string ImagePath { get; set; }
+        public BitmapImage CustomImage { get; set; }
+
+        public const string ImagePath = "../../Assets/Images/DefaultSong.png";
 
         public Song() { }
 
-        public Song(string name, string author, string path)
+        public Song(string name, string author, string path, BitmapImage bi)
         {
             this.Name = name;
             this.Author = author;
             this.Path = path;
-            this.ImagePath = "../../Assets/Images/DefaultSong.svg";
+            this.CustomImage = bi;
             this.ID = NextID++;
             AllSongs.Add(this);
             
