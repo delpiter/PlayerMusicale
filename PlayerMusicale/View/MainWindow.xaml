@@ -3,16 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PlayerMusicale"
+        xmlns:local="clr-namespace:PlayerMusicale" xmlns:viewmodel="clr-namespace:PlayerMusicale.ViewModel"
         mc:Ignorable="d"
         Title="Spotitappy" WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Background="{DynamicResource BgColor0}"
         Height="720" Width="1280" Name="mainW">
-    <Window.Resources>
-        
-    </Window.Resources>
+    <Window.DataContext>
+        <viewmodel:PlayerViewModel/>
+    </Window.DataContext>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -41,6 +42,8 @@
                               HorizontalScrollBarVisibility="Hidden"
                               VerticalScrollBarVisibility="Hidden">
                     <StackPanel Orientation="Vertical">
+                        <Button Content="Add a new Song" Command="{Binding Path=NewSong}"></Button>
+                        <Button Content="new playlist" Command="{Binding Path=NewPlaylist}"></Button>
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
@@ -73,7 +76,6 @@
         </Grid>
         <Grid Grid.Row="2"
               Background="{DynamicResource BgColor2}">
-
         </Grid>
     </Grid>
 </Window>

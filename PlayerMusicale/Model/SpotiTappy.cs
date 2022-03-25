@@ -11,7 +11,7 @@ namespace PlayerMusicale.Model
 {
     public partial class SpotiTappy
     {
-        public static ObservableCollection<Playlist> Playlists = new ObservableCollection<Playlist>();
+        public static List<Playlist> Playlists = new List<Playlist>();
 
         public SpotiTappy()
         {
@@ -23,12 +23,12 @@ namespace PlayerMusicale.Model
             StreamWriter sw;
             using (sw = new StreamWriter("../../Serialization/AllSongs.xml")) 
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
                 serializer.Serialize(sw, Song.AllSongs);
             }
             using (sw = new StreamWriter("../../Serialization/PlayLists.xml"))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
                 serializer.Serialize(sw, Playlists);
             }
 
@@ -41,8 +41,8 @@ namespace PlayerMusicale.Model
             {
                 using (sr = new StreamReader("../../Serialization/AllSongs.xml"))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
-                    Song.AllSongs = (ObservableCollection<Song>)serializer.Deserialize(sr);
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
+                    Song.AllSongs = (List<Song>)serializer.Deserialize(sr);
                 }
             }
             
@@ -50,8 +50,8 @@ namespace PlayerMusicale.Model
             {
                 using (sr = new StreamReader("../../Serialization/PlayLists.xml"))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Playlist>));
-                    Playlists = (ObservableCollection<Playlist>)serializer.Deserialize(sr);
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Playlist>));
+                    Playlists = (List<Playlist>)serializer.Deserialize(sr);
                 }
             }
         }

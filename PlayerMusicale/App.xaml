@@ -8,7 +8,8 @@
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Assets/Template/ListViewTemplate.xaml"/>
+                <ResourceDictionary Source="/Assets/Style/ListViewTemplate.xaml"/>
+                <ResourceDictionary Source="/Assets/Style/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

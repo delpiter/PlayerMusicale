@@ -11,7 +11,7 @@ namespace PlayerMusicale.Model
     [Serializable]
     public class Song
     {
-        public static ObservableCollection<Song> AllSongs = new ObservableCollection<Song>();
+        public static List<Song> AllSongs = new List<Song>();
 
         private static uint NextID = 0;
         public uint ID { get; set; }
@@ -20,7 +20,7 @@ namespace PlayerMusicale.Model
         public string Path { get; set; }
         public BitmapImage CustomImage { get; set; }
 
-        public const string ImagePath = "../../Assets/Images/DefaultSong.png";
+        public static string ImagePath = "../../Assets/Images/DefaultSong.png";
 
         public Song() { }
 
@@ -33,6 +33,18 @@ namespace PlayerMusicale.Model
             this.ID = NextID++;
             AllSongs.Add(this);
             
+            //sbrobobbo
+        }
+
+        public Song(string name, string author, string path)
+        {
+            this.Name = name;
+            this.Author = author;
+            this.Path = path;
+            this.CustomImage = new BitmapImage(new Uri("../../Assets/Images/DefaultSong.png"));
+            this.ID = NextID++;
+            AllSongs.Add(this);
+
             //sbrobobbo
         }
     }
