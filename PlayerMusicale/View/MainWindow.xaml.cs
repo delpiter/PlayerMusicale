@@ -24,11 +24,18 @@ namespace PlayerMusicale
         public MainWindow()
         {
             InitializeComponent();
+            ViewModel.PlayerViewModel.Load();
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.PlayerViewModel.Save();
+            Environment.Exit(0);
         }
     }
 }

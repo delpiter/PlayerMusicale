@@ -13,11 +13,12 @@ namespace PlayerMusicale.Model
     {
         public static List<Song> AllSongs = new List<Song>();
 
-        private static uint NextID = 0;
+        public static uint NextID;
         public uint ID { get; set; }
         public string Name { get; set; }
         public string Author { get; set; }
         public string Path { get; set; }
+
         public BitmapImage CustomImage { get; set; }
 
         public static string ImagePath = "../../Assets/Images/DefaultSong.png";

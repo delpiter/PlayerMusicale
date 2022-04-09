@@ -10,6 +10,19 @@ namespace PlayerMusicale.ViewModel
 {
     public class PlayerViewModel : ObservableObject
     {
+        #region FileOrganization
+
+        public static void Load()
+        {
+            Model.SpotiTappy.LoadFiles();
+        }
+        public static void Save()
+        {
+            Model.SpotiTappy.SaveFiles();
+        }
+        #endregion
+
+        #region Commands
         public ICommand NewSong
         {
             get
@@ -45,5 +58,6 @@ namespace PlayerMusicale.ViewModel
         {
             return true;
         }
+        #endregion
     }
 }

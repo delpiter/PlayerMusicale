@@ -42,8 +42,8 @@
                               HorizontalScrollBarVisibility="Hidden"
                               VerticalScrollBarVisibility="Hidden">
                     <StackPanel Orientation="Vertical">
-                        <Button Content="Add a new Song" Command="{Binding Path=NewSong}"></Button>
-                        <Button Content="new playlist" Command="{Binding Path=NewPlaylist}"></Button>
+                        <Button Content="Add a New Song" Command="{Binding Path=NewSong}" Style="{StaticResource NewButtons}"></Button>
+                        <Button Content="New Playlist" Command="{Binding Path=NewPlaylist}" Style="{StaticResource NewButtons}"></Button>
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
@@ -69,7 +69,7 @@
                 <Button Style="{StaticResource ControlButtons}">
                     
                 </Button>
-                <Button Style="{StaticResource ControlButtons}">
+                <Button Style="{StaticResource ControlButtons}" Click="Close_Click">
                     
                 </Button>
             </StackPanel>

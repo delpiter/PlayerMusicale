@@ -25,6 +25,29 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="Button" x:Key="NewButtons">
+
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="{DynamicResource BgColor1}"/>
+        <Setter Property="Height" Value="35"/>
+        
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF3E3E3E"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <FontFamily x:Key="ProximaNova" >/Assets/Fonts/#Proxima Nova Font</FontFamily>
 
     <SolidColorBrush x:Key="BgColor0" Color="#000"/>
