@@ -10,15 +10,18 @@ namespace PlayerMusicale.ViewModel
 {
     public class PlayerViewModel : ObservableObject
     {
+        public static Model.SpotiTappy st;
+
         #region FileOrganization
 
         public static void Load()
         {
-            Model.SpotiTappy.LoadFiles();
+            st = new Model.SpotiTappy();
+            st.LoadFiles();
         }
         public static void Save()
         {
-            Model.SpotiTappy.SaveFiles();
+            st.SaveFiles();
         }
         #endregion
 

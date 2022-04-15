@@ -11,17 +11,18 @@ namespace PlayerMusicale.Model
     [Serializable]
     public class Song
     {
-        public static List<Song> AllSongs = new List<Song>();
-
+        #region Variables
         public static uint NextID;
         public uint ID { get; set; }
         public string Name { get; set; }
         public string Author { get; set; }
         public string Path { get; set; }
 
+        [System.Xml.Serialization.XmlIgnore]
         public BitmapImage CustomImage { get; set; }
 
-        public static string ImagePath = "../../Assets/Images/DefaultSong.png";
+        public static string DefaultImagePath = "../../Assets/Images/DefaultSong.png";
+        #endregion
 
         public Song() { }
 
@@ -32,9 +33,6 @@ namespace PlayerMusicale.Model
             this.Path = path;
             this.CustomImage = bi;
             this.ID = NextID++;
-            AllSongs.Add(this);
-            
-            //sbrobobbo
         }
 
         public Song(string name, string author, string path)
@@ -42,11 +40,8 @@ namespace PlayerMusicale.Model
             this.Name = name;
             this.Author = author;
             this.Path = path;
-            this.CustomImage = new BitmapImage(new Uri("../../Assets/Images/DefaultSong.png"));
+            this.CustomImage = new BitmapImage(new Uri(DefaultImagePath));
             this.ID = NextID++;
-            AllSongs.Add(this);
-
-            //sbrobobbo
         }
     }
 }

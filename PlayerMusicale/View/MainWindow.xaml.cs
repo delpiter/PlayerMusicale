@@ -24,7 +24,7 @@ namespace PlayerMusicale
         public MainWindow()
         {
             InitializeComponent();
-            ViewModel.PlayerViewModel.Load();
+            //ViewModel.PlayerViewModel.Load();
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -34,7 +34,7 @@ namespace PlayerMusicale
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.PlayerViewModel.Save();
+            //iewModel.PlayerViewModel.Save();
             Environment.Exit(0);
         }
     }

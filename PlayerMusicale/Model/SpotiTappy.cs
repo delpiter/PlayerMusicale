@@ -7,25 +7,31 @@ using System.Xml.Serialization;
 using System.IO;
 using System.Collections.ObjectModel;
 using Newtonsoft.Json.Linq;
+using System.Windows.Media.Imaging;
 
 namespace PlayerMusicale.Model
 {
     public class SpotiTappy
     {
-        public static List<Playlist> Playlists = new List<Playlist>();
+        public List<Playlist> Playlists;
 
+        public List<Song> AllSongs;
+
+        public Playlist[] ViwedPlayLists;
         public SpotiTappy()
         {
-
+            this.Playlists = new List<Playlist>();
+            this.AllSongs = new List<Song>();
+            this.ViwedPlayLists = new Playlist[8];
         }
 
-        public static void SaveFiles()
+        public void SaveFiles()
         {
             StreamWriter sw;
-            using (sw = new StreamWriter("../../../Serialization/AllSongs.xml")) 
+            using (sw = new StreamWriter("../../../Serialization/AllSongs.xml"))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
-                serializer.Serialize(sw, Song.AllSongs);
+                serializer.Serialize(sw, AllSongs);
             }
             using (sw = new StreamWriter("../../../Serialization/PlayLists.xml"))
             {
@@ -41,18 +47,18 @@ namespace PlayerMusicale.Model
             File.WriteAllText(@"../../../Serialization/IDs.json", json);
         }
 
-        public static void LoadFiles()
+        public void LoadFiles()
         {
             StreamReader sr;
-            if(File.Exists("../../../Serialization/AllSongs.xml"))
+            if (File.Exists("../../../Serialization/AllSongs.xml"))
             {
                 using (sr = new StreamReader("../../../Serialization/AllSongs.xml"))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
-                    Song.AllSongs = (List<Song>)serializer.Deserialize(sr);
+                    AllSongs = (List<Song>)serializer.Deserialize(sr);
                 }
             }
-            
+
             if (File.Exists("../../../Serialization/PlayLists.xml"))
             {
                 using (sr = new StreamReader("../../../Serialization/PlayLists.xml"))
@@ -69,6 +75,35 @@ namespace PlayerMusicale.Model
             Song.NextID = id1;
             Playlist.nextID = id2;
 
+            ImageOnStartup();
+        }
+        private void ImageOnStartup()
+        {
+            for (int i = 0; i < AllSongs.Count; i++)
+            {
+                FileInfo f = new FileInfo(AllSongs[i].Path);
+                AllSongs[i].CustomImage = LoadImages(TagLib.File.Create(f.FullName));
+            }
+            for (int i = 0; i < Playlists.Count; i++)
+            {
+                Playlists[i].Image = new BitmapImage(new Uri(Playlists[i].ImagePath));
+            }
+        }
+
+        private BitmapImage LoadImages(TagLib.File tfile)
+        {
+            MemoryStream ms = new MemoryStream(tfile.Tag.Pictures[0].Data.Data);
+
+            var bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.StreamSource = ms;
+            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+            bitmap.EndInit();
+            bitmap.Freeze();
+
+            return bitmap;
+
         }
     }
 }
+
