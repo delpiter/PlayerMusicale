@@ -40,7 +40,7 @@
                                 </Style.Triggers>
                             </Style>
                         </DockPanel.Style>
-                        <!-- * = To implement after the "add song feature is implemented-->
+                        <!-- * = To implement after the "add song feature is added-->
                         <!-- * Source="{Binding }"-->
                         <Image Width="50" Height="50" DockPanel.Dock="Left"/>
                         <!--Here goes the image file from the mp3 -->

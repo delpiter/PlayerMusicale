@@ -5,12 +5,14 @@
              StartupUri="./View/MainWindow.xaml">
 
     <Application.Resources>
-
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Assets/Style/ListViewTemplate.xaml"/>
                 <ResourceDictionary Source="/Assets/Style/Styles.xaml"/>
+                <ResourceDictionary Source="/Assets/Style/HomePageView.xaml"/>
+                <ResourceDictionary Source="/Assets/Style/PlaylistViewList.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
+    
 </Application>

@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <FontFamily x:Key="ProximaNova" >/Assets/Fonts/#Proxima Nova Font</FontFamily>
+    
+    <!--#region Colors-->
 
     <SolidColorBrush x:Key="BgColor0" Color="#000"/>
     <SolidColorBrush x:Key="BgColor1" Color="#121212"/>
@@ -15,7 +17,11 @@
     <SolidColorBrush x:Key="BtColor2" Color="#282828"/>
 
     <SolidColorBrush x:Key="FgColor0" Color="White"/>
+    <SolidColorBrush x:Key="FgColor1" Color="#898989"/>
     
+    <!--#endregion-->
+    
+    <!--#region Main Window Buttons Style-->
     <Style TargetType="Button" x:Key="ControlButtons">
         <Setter Property="HorizontalAlignment" Value="Right"/>
         <Setter Property="Width" Value="40"/>
@@ -43,8 +49,10 @@
 
         <Setter Property="Foreground" Value="{DynamicResource FgColor0}"/>
         <Setter Property="Background" Value="{DynamicResource BgColor1}"/>
-        <Setter Property="Height" Value="35"/>
-        
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="15"></Setter>
+
 
         <Setter Property="Template">
             <Setter.Value>
@@ -62,60 +70,15 @@
         </Style.Triggers>
     </Style>
 
-
-
+    <!--#endregion-->
+    
+    <!--#region Other Stuff-->
     <Style TargetType="Label">
         <Setter Property="Foreground" Value="{DynamicResource FgColor0}"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="FontWeight" Value="Black"/>
     </Style>
-
-    
-    <Style TargetType="Button" x:Key="HomePageView">
-
-        <Setter Property="Background" Value="{DynamicResource BtColor0}"/>
-        <Setter Property="Margin" Value="30,10,30,10"/>
-        <Setter Property="Control.BorderBrush" Value="{x:Null}" />
-        <Setter Property="Height" Value="220"/>
-        <Setter Property="Foreground" Value="{DynamicResource FgColor0}"/>
-
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="8*"/>
-                                <RowDefinition Height="2*"/>
-                            </Grid.RowDefinitions>
-
-                            <Border Margin="10" CornerRadius="10" Background="{DynamicResource BtColor2}">
-                                <StackPanel  Grid.Row="0" Height="150" Width="150">
-                                    <!--Insert binding here-->
-                                    <Image Margin="5" Source="/Assets/Style/DefaultPlaylist.png" Stretch="UniformToFill">
-
-                                    </Image>
-                                </StackPanel>
-                            </Border>
-
-                        </Grid>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource BtColor1}"/>
-            </Trigger>
-        </Style.Triggers>
-
-        <Style.Resources>
-            <Style TargetType="Border">
-                <Setter Property="CornerRadius" Value="10"/>
-            </Style>
-        </Style.Resources>
-
-    </Style>
+    <!--#endregion-->
     
 </ResourceDictionary>

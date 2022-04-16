@@ -34,7 +34,7 @@ namespace PlayerMusicale
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            //iewModel.PlayerViewModel.Save();
+            //ViewModel.PlayerViewModel.Save();
             Environment.Exit(0);
         }
     }

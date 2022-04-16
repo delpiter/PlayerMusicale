@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlayerMusicale" xmlns:viewmodel="clr-namespace:PlayerMusicale.ViewModel"
         mc:Ignorable="d"
-        Title="Spotitappy" WindowStyle="None"
+        WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Background="{DynamicResource BgColor0}"
@@ -15,11 +15,15 @@
     </Window.DataContext>
     
     <Grid>
+        <!--#region Main Grid Definition-->
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
+        <!--#endregion-->
+        
+        <!--#region Central View Grid-->
         <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="2,0,-2,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -31,26 +35,51 @@
                     <RowDefinition Height="{Binding 
                         ElementName=TitleBar, 
                         Path=ActualHeight}"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition/>
                     <RowDefinition Name="ImageRow" Height="auto"/>
                 </Grid.RowDefinitions>
+                <!--#region Left Column-->
                 
+                <!--#region Static Buttons-->
+                <StackPanel Orientation="Vertical" Grid.Row="1">
+                    <Button Command="{Binding}" Style="{StaticResource NewButtons}">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Height="35" Width="35"></Image>
+                            <TextBlock Margin="15,0,0,0" VerticalAlignment="Center">Home</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Command="{Binding Path=NewSong}" Style="{StaticResource NewButtons}">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Height="35" Width="35"></Image>
+                            <TextBlock Margin="15,0,0,0" VerticalAlignment="Center">Add A New Song</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Command="{Binding Path=NewPlaylist}" Style="{StaticResource NewButtons}">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Height="35" Width="35"></Image>
+                            <TextBlock Margin="15,0,0,0" VerticalAlignment="Center">Create Playlist</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Border Margin="0,10,0,0" Height="1" Width="160" Background="{DynamicResource FgColor1}"></Border>
+                </StackPanel>
+                <!--#endregion-->
                 
+                <!--#region Playlist ListView-->
+                <ListView Grid.Row="2">
+                    
+                </ListView>
+                <!--#endregion-->
                 
-                <ScrollViewer Grid.Row="2"
-                              HorizontalScrollBarVisibility="Hidden"
-                              VerticalScrollBarVisibility="Hidden">
-                    <StackPanel Orientation="Vertical">
-                        <Button Content="Add a New Song" Command="{Binding Path=NewSong}" Style="{StaticResource NewButtons}"></Button>
-                        <Button Content="New Playlist" Command="{Binding Path=NewPlaylist}" Style="{StaticResource NewButtons}"></Button>
-                    </StackPanel>
-                </ScrollViewer>
+                <!--#endregion-->
             </Grid>
             <Frame Grid.Column="1" Source="../View/HomePage.xaml">
                 
             </Frame>
         </Grid>
+        <!--#endregion-->
+        
+        <!--#region Top Bar-->
         <Rectangle Height="{Binding ElementName=TitleBar, Path=ActualHeight}"
                    Fill="Transparent" MouseLeftButtonDown="Rectangle_MouseLeftButtonDown"/>
         <Grid Name="TitleBar">
@@ -59,9 +88,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="1"
-                   FontSize="11"
-                   Content="{Binding ElementName=mainW, Path=Title}"/>
+
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
                 <Button Style="{StaticResource ControlButtons}">
                     <!--<TextBlock Text="-" />-->
@@ -74,8 +101,12 @@
                 </Button>
             </StackPanel>
         </Grid>
+        <!--#endregion-->
+        
+        <!--#region Bottom Grid-->
         <Grid Grid.Row="2"
               Background="{DynamicResource BgColor2}">
         </Grid>
+        <!--#endregion-->
     </Grid>
 </Window>
