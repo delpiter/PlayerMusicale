@@ -13,16 +13,14 @@ namespace PlayerMusicale.Model
 {
     public class SpotiTappy
     {
-        public List<Playlist> Playlists;
+        public ObservableCollection<Playlist> Playlists;
 
-        public List<Song> AllSongs;
+        public ObservableCollection<Song> AllSongs;
 
-        public Playlist[] ViwedPlayLists;
         public SpotiTappy()
         {
-            this.Playlists = new List<Playlist>();
-            this.AllSongs = new List<Song>();
-            this.ViwedPlayLists = new Playlist[8];
+            this.Playlists = new ObservableCollection<Playlist>();
+            this.AllSongs = new ObservableCollection<Song>();
         }
 
         public void SaveFiles()
@@ -30,12 +28,12 @@ namespace PlayerMusicale.Model
             StreamWriter sw;
             using (sw = new StreamWriter("../../../Serialization/AllSongs.xml"))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
+                XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
                 serializer.Serialize(sw, AllSongs);
             }
             using (sw = new StreamWriter("../../../Serialization/PlayLists.xml"))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
+                XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Playlist>));
                 serializer.Serialize(sw, Playlists);
             }
 
@@ -54,8 +52,8 @@ namespace PlayerMusicale.Model
             {
                 using (sr = new StreamReader("../../../Serialization/AllSongs.xml"))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<Song>));
-                    AllSongs = (List<Song>)serializer.Deserialize(sr);
+                    XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Song>));
+                    AllSongs = (ObservableCollection<Song>)serializer.Deserialize(sr);
                 }
             }
 
@@ -63,8 +61,8 @@ namespace PlayerMusicale.Model
             {
                 using (sr = new StreamReader("../../../Serialization/PlayLists.xml"))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<Playlist>));
-                    Playlists = (List<Playlist>)serializer.Deserialize(sr);
+                    XmlSerializer serializer = new XmlSerializer(typeof(ObservableCollection<Playlist>));
+                    Playlists = (ObservableCollection<Playlist>)serializer.Deserialize(sr);
                 }
             }
 

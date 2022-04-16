@@ -45,29 +45,38 @@
                 <StackPanel Orientation="Vertical" Grid.Row="1">
                     <Button Command="{Binding}" Style="{StaticResource NewButtons}">
                         <StackPanel Orientation="Horizontal" Width="200">
-                            <Image Height="35" Width="35"></Image>
+                            <Image Margin="15,0,0,0" Height="35" Width="35"></Image>
                             <TextBlock Margin="15,0,0,0" VerticalAlignment="Center">Home</TextBlock>
                         </StackPanel>
                     </Button>
-                    <Button Command="{Binding Path=NewSong}" Style="{StaticResource NewButtons}">
+                    
+                    <Button Command="{Binding}" Style="{StaticResource NewButtons}">
                         <StackPanel Orientation="Horizontal" Width="200">
-                            <Image Height="35" Width="35"></Image>
-                            <TextBlock Margin="15,0,0,0" VerticalAlignment="Center">Add A New Song</TextBlock>
+                            <Image Margin="15,0,0,0" Height="35" Width="35"></Image>
+                            <TextBlock Margin="15,0,0,0" VerticalAlignment="Center">All Songs</TextBlock>
                         </StackPanel>
                     </Button>
+                    
+                    <Button Command="{Binding Path=NewSong}" Style="{StaticResource NewButtons}">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Margin="15,0,0,0" Height="35" Width="35"></Image>
+                            <TextBlock Margin="15,0,0,0" VerticalAlignment="Center">New Song</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    
                     <Button Command="{Binding Path=NewPlaylist}" Style="{StaticResource NewButtons}">
                         <StackPanel Orientation="Horizontal" Width="200">
-                            <Image Height="35" Width="35"></Image>
+                            <Image Margin="15,0,0,0" Height="35" Width="35"></Image>
                             <TextBlock Margin="15,0,0,0" VerticalAlignment="Center">Create Playlist</TextBlock>
                         </StackPanel>
                     </Button>
+                    
                     <Border Margin="0,10,0,0" Height="1" Width="160" Background="{DynamicResource FgColor1}"></Border>
                 </StackPanel>
                 <!--#endregion-->
                 
                 <!--#region Playlist ListView-->
-                <ListView Grid.Row="2">
-                    
+                <ListView Grid.Row="2" Style="{StaticResource Playlists}" ItemsSource="{Binding st.Playlists}" DisplayMemberPath="Name">
                 </ListView>
                 <!--#endregion-->
                 

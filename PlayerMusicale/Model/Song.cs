@@ -13,33 +13,41 @@ namespace PlayerMusicale.Model
     {
         #region Variables
         public static uint NextID;
+
         public uint ID { get; set; }
+
         public string Name { get; set; }
+
         public string Author { get; set; }
+
         public string Path { get; set; }
+
+        public string Duration { get; set; }
 
         [System.Xml.Serialization.XmlIgnore]
         public BitmapImage CustomImage { get; set; }
 
-        public static string DefaultImagePath = "../../Assets/Images/DefaultSong.png";
+        public static string DefaultImagePath = "../../../Assets/Images/DefaultSong.png";
         #endregion
 
         public Song() { }
 
-        public Song(string name, string author, string path, BitmapImage bi)
+        public Song(string name, string author, string path, string duration, BitmapImage bi)
         {
             this.Name = name;
             this.Author = author;
             this.Path = path;
+            this.Duration = duration;
             this.CustomImage = bi;
             this.ID = NextID++;
         }
 
-        public Song(string name, string author, string path)
+        public Song(string name, string author, string path, string duration)
         {
             this.Name = name;
             this.Author = author;
             this.Path = path;
+            this.Duration = duration;
             this.CustomImage = new BitmapImage(new Uri(DefaultImagePath));
             this.ID = NextID++;
         }

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.ComponentModel;
 using System.Windows.Shapes;
+using PlayerMusicale.ViewModel;
 
 namespace PlayerMusicale
 {
@@ -21,9 +22,13 @@ namespace PlayerMusicale
     /// </summary>
     public partial class MainWindow : Window
     {
+        PlayerViewModel pvm;
+        
         public MainWindow()
         {
             InitializeComponent();
+            pvm = new PlayerViewModel();
+            pvm.Load();
             //ViewModel.PlayerViewModel.Load();
         }
 

@@ -15,14 +15,17 @@ namespace PlayerMusicale.Model
         #region Variables
         public static uint nextID;
 
-        static string DefaultImagePath = "../../Assets/Images/DefaultPlaylist.png";
+        static string DefaultImagePath = "Assets/Images/DefaultPlaylist.png";
+
         public string Name { get; set; }
+
         public List<Song> Songs { get; set; }
 
         [System.Xml.Serialization.XmlIgnore]
         public BitmapImage Image { get; set; }
 
         public string ImagePath { get; set; }
+
         public uint ID { get; set; }
         #endregion
 
@@ -32,7 +35,7 @@ namespace PlayerMusicale.Model
             this.ID = nextID++;
             this.Name = name;
             this.Songs = new List<Song>();
-            this.Image = new BitmapImage(new Uri(DefaultImagePath));
+            //this.Image = new BitmapImage(new Uri(DefaultImagePath));
         }
 
         public void ChangeImage(string path)
