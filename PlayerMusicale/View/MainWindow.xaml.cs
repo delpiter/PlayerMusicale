@@ -22,14 +22,9 @@ namespace PlayerMusicale
     /// </summary>
     public partial class MainWindow : Window
     {
-        PlayerViewModel pvm;
-        
         public MainWindow()
         {
             InitializeComponent();
-            pvm = new PlayerViewModel();
-            pvm.Load();
-            //ViewModel.PlayerViewModel.Load();
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

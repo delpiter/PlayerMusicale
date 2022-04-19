@@ -7,7 +7,6 @@
         <Setter Property="Margin" Value="0,20,0,0"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontWeight" Value="DemiBold"/>
-        <!--to change when finished-->
         <Setter Property="Background" Value="{DynamicResource BgColor1}"/>
 
         <Setter Property="ItemContainerStyle">
@@ -16,10 +15,7 @@
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="ListViewItem">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
-                                    <ContentPresenter VerticalAlignment="Center" 
-                                                  Margin="15,0,0,0"/>
-                                </Border>
+                                <ContentPresenter/>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
@@ -31,8 +27,6 @@
                 </Style>
             </Setter.Value>
         </Setter>
-
-
     </Style>
 
 </ResourceDictionary>

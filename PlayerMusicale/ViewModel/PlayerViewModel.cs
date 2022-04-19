@@ -1,35 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using MicroMvvm;
+﻿using MicroMvvm;
 using PlayerMusicale.Model;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace PlayerMusicale.ViewModel
 {
     public class PlayerViewModel : ObservableObject
     {
-        public Model.SpotiTappy st;
+        private SpotiTappy st;
 
-        public ObservableCollection<Playlist> HomePage;
+        private Playlist CurrentPlaylist;
+
+        private ObservableCollection<Playlist> HomePage;
+
+        #region Get/Set
+        public SpotiTappy St
+        {
+            get { return st; }
+            set { st = value; RaisePropertyChanged("SpotiTappy"); }
+        }
+        #endregion
+
+        public PlayerViewModel()
+        {
+            st = new SpotiTappy();
+            HomePage = new ObservableCollection<Playlist>();
+            Load();
+        }
 
         #region FileOrganization
 
         public void Load()
         {
-            st = new SpotiTappy();
-            HomePage = new ObservableCollection<Playlist>();
             //st.LoadFiles();
-            st.Playlists.Add(new Playlist("SpotiTappy"));
-            HomePageViewUpdate();
+            //HomePageViewUpdate();
         }
         public void HomePageViewUpdate()
         {
 
         }
+
         public void Save()
         {
             //st.SaveFiles();
@@ -47,7 +57,7 @@ namespace PlayerMusicale.ViewModel
 
         void NewSongExecute()
         {
-            
+
         }
 
         bool NewSongCanExecute()
